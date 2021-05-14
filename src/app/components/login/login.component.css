@@ -1,0 +1,13 @@
+.full-width {
+    width: 100%;
+} 
+
+#principal {
+    background-color: rgb(0, 183, 255);
+    margin-top: -20px;
+    height: 95.1%;
+}
+
+.loginsenha {
+    font-size: 25px;
+}

@@ -1,0 +1,634 @@
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.estatisticas {
+  background-color: rgb(0, 183, 255);
+  font-size: 16px;
+}
+
+.estatisticas2 {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.fundo {
+    background-color: rgb(0, 183, 255);
+    height: 95%;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.menuEsquerda {
+  margin-left: 6%;
+  margin-top: -11%;
+  width: 255px;
+  height: 450px;
+}
+
+#label2 {
+  padding-top: -150px;
+}
+
+#estatisticas {
+  background-color: rgb(220,20,60);
+  height: 200px;
+  width: 200px;
+  /* margin-top: -400px;  
+  margin-left: -100%;
+  flex-direction: row; */
+
+  }
+
+
+#opcoes {  
+  background-color: rgb(220,20,60);
+  height: 200px;
+  width: 200px;
+  /*margin-top: 100px;
+  margin-left: -620px;
+  width: 200px;
+  border-radius: 5%; */
+}
+
+.tempoCorrido {
+  font-size: 17px;  
+}
+
+.tempoCorridoHistorico {
+  font-size: 12px; 
+  margin-left: 90px; 
+}
+
+#principal {  
+    background-color: rgb(220,20,60);
+    height: 200px;
+    width: 850px;
+    margin-top: -380px;
+    margin-left: 0px;
+    /*margin-top: 100px;
+    margin-left: -620px;
+    width: 200px;
+    border-radius: 5%; */
+}
+
+.botaoIniciar{
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.textoGerado {
+  color: rgb(245, 4, 4);
+  margin-bottom: 2%;
+  margin-left: 70px;
+}
+
+.textoDigitado {
+  color: rgb(245, 4, 4);
+  font-size: 25px;
+  margin-bottom: 40%;
+}
+
+#dados {
+  color: rgb(245, 4, 4);
+  font-size: 15px;
+  margin-left: 100px;
+}
+
+#tamanho {
+  color: rgb(245, 4, 4);
+  font-size: 15px;
+  max-width: 2cm;
+  max-inline-size: 5;
+}
+
+#textoGerado, #textoDigitado {
+  color: rgb(245, 4, 4);
+  font-size: 15px;
+  max-inline-size: 5;
+}
+
+#gerarLetras {
+  font-size: 15px;
+}
+
+#comecar {
+  color: rgb(245, 4, 4);
+  font-size: 15px;
+  width: 200px;
+  height: 45px;
+}
+
+.labell {
+  color: #fff;
+  background: rgb(206, 190, 190);
+  font-size: 25px;
+  margin-bottom: 40%;
+}
+
+.teclasDigitadas {
+  font-size: 15px;
+  /* margin-right: 20px; */
+  align-content: center;
+}
+
+.teclado{
+    /* background-color: #555; */
+    padding: 5px 5px 10px;
+    border-radius: 5px;
+    margin-top: 7%;
+    margin-left: 100px;
+    display: inline-block;
+    /* min-width: 1045px; */
+    min-width: 620px;
+    /* -webkit-user-select: none; */
+    /* box-shadow: 0px 4px 8px -4px #000;     */
+    box-shadow: 4px 4px 4px -2px rgb(255, 0, 0);    
+  }
+
+  .center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bloque{
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 600px;
+  }
+  .fila-teclas::after, .fila-teclas::before{
+    content: '';
+    display: table;
+    clear: both;
+  }
+  .tecla{
+    padding: 2px 3px 3px;
+    float: left;
+  }
+
+  .tecla > span{
+    background-color: #555;
+    height: 33px;
+    padding-top: 0px;
+    padding-left: 7px;
+    padding-right: 7px;
+    display: inline-block;
+    font-family: Verdana;
+    color: #fff;
+    font-size: 10px;
+    box-shadow: 0px 0px 5px 2px #333;
+    border-radius: 2px 2px 6px 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .tecla > span:hover{
+    background-color: #666;
+    cursor: pointer;
+  }
+  .tecla > span:active{
+    background-color: #555;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 2px #222;
+  }
+  .tecla-letra > span{
+    width: 35px;
+  }
+
+  .tecla-letra-e-minimo > span{
+    width: 35px;
+    color: rgb(8, 234, 250);
+    line-height: 1.5;
+    padding-top: 5px;
+    margin-top: 0px;
+  }
+
+  .tecla-letra-d-minimo > span{
+    width: 35px;
+    color: rgb(8, 234, 250);
+    line-height: 1.5;
+    padding-top: 5px;
+  }
+
+  .tecla-letra-e-anular > span{
+    width: 35px;
+    color: rgb(30, 192, 9);    
+    line-height: 1.5;
+    padding-top: 2px;
+  }
+
+  .tecla-letra-d-anular > span{
+    width: 35px;
+    color: rgb(30, 192, 9);
+  }
+
+  .tecla-letra-e-medio > span{
+    width: 35px;
+    color: rgb(255, 145, 0);
+    line-height: 1.5;
+    padding-top: 5px;
+  }  
+
+  .tecla-letra-d-medio > span{
+    width: 35px;
+    color: rgb(255, 145, 0);
+  } 
+
+  .tecla-letra-e-indicador > span{
+    width: 35px;
+    color: rgb(192, 9, 9);
+  }
+
+  .tecla-letra-d-indicador > span{
+    width: 35px;
+    color: #bf40bf;
+  }
+
+  .tecla-capslock-e-minimo > span{
+    width: 65px;
+    font-size: 10px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }  
+  
+  .tecla-shift > span{
+    width: 44px;
+    font-size: 10px;
+    text-transform: none;
+    line-height: 27px;
+  }
+
+  .tecla-shift-e-minimo > span{
+    width: 44px;
+    font-size: 10px;
+    text-transform: none;
+    line-height: 27px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+
+  .tecla-caract-espec span{
+    width: 35px;
+    font-size: 10px;
+  }
+
+  .tecla-caract-espec-e-minimo span{
+    width: 35px;
+    font-size: 8px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+    vertical-align: top;
+    line-height: 2;
+  }
+
+  .tecla-caract-espec-d-minimo span{
+    width: 35px;
+    font-size: 8px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+    vertical-align: top;
+    line-height: 2;
+  }
+
+  .tecla-caract-espec-d-medio span{
+    width: 35px;
+    font-size: 10px;
+    color: rgb(255, 145, 0);
+    text-transform: initial;
+    vertical-align: top;
+    line-height: 1.5;
+    padding-top: 2px;
+  }
+
+  .tecla-caract-espec-d-anular span{
+    width: 35px;
+    font-size: 10px;
+    color: rgb(30, 192, 9);
+    text-transform: initial;
+    line-height: 1.5;
+    padding-top: 2px;
+  } 
+
+  .tecla-caract-espec-tiny-d-anular span{
+    width: 35px;
+    font-size: 10px;
+    color: rgb(30, 192, 9);
+    text-transform: initial;
+    line-height: 1.5;
+  } 
+
+  .tecla-caract-espec-tiny span{
+    width: 22px;
+    font-size: 10px;
+  } 
+
+  .tecla-ctrl span{
+    width: 45px;
+    text-transform: none;
+    line-height: 27px;
+  }
+
+  .tecla-ctrl-e-minimo span{
+    width: 45px;
+    text-transform: none;
+    line-height: 27px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+  .tecla-fn span{
+    width: 35px;
+    font-size: 10px;
+    text-transform: none;
+
+    line-height: 14px;
+  }
+  .tecla-windows-e-minimo span{
+    width: 45px;
+    font-size: 10px;
+    text-transform: none;
+    line-height: 27px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+  .tecla-alt-e-minimo span{
+    width: 43px;
+    text-transform: none;
+    line-height: 27px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+
+  .tecla-alt-gr-d-anular span{
+    width: 45px;
+    text-transform: none;
+    line-height: 27px;
+    color: rgb(30, 192, 9);
+    text-transform: initial;
+  }
+
+  .tecla-btn-fn-d-anular span{
+    width: 43px;
+    text-transform: none;
+    line-height: 27px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+
+  .tecla-btn-imp-d-anular span{
+    width: 43px;
+    text-transform: none;
+    line-height: 27px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+
+  .tecla-ctrl-two-d-anular span{
+    width: 45px;
+    text-transform: none;
+    line-height: 27px;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+
+  .tecla-space-bar span{
+    /* width: 330px; */
+    width: 250px;
+  }
+  .tecla-alt-gr span{
+    width: 39px;
+    font-size: 12px;
+    text-transform: none;
+    line-height: 27px;
+  }
+  .tecla-btn-fn span{
+    width: 35px;    
+    font-size: 15px;
+    text-transform: none;
+    line-height: 27px;
+  }
+  .tecla-btn-imp span{
+    width: 35px;    
+    font-size: 10px;
+    text-transform: none;
+    line-height: 27px;
+  }
+  .tecla-ctrl-two span{
+    width: 40px;
+    text-transform: none;
+    line-height: 27px;
+  }
+  .tecla-tab-e-minimo span{
+    width: 52px;
+    font-size: 14px;    
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+  .tecla-null-e-minimo span{
+    width: 35px;
+    font-size: 10px;
+    text-transform: none;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+  .tecla-shift-numero span{
+    width: 35px;
+    font-size: 10.5px;
+    line-height: 13.5px;
+    text-transform: none;
+  }
+
+  .tecla-shift-numero-e-anular span{
+    width: 35px;
+    font-size: 10.5px;
+    line-height: 13.5px;
+    text-transform: none;
+    color: rgb(30, 192, 9);
+    text-transform: initial;
+  }
+
+  .tecla-shift-numero-e-minimo span{
+    width: 35px;
+    font-size: 10.5px;
+    line-height: 13.5px;
+    text-transform: none;
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+
+  .tecla-shift-numero-e-medio span{
+    width: 35px;
+    font-size: 10.5px;
+    line-height: 13.5px;
+    text-transform: none;
+    color: rgb(255, 145, 0);
+    text-transform: initial;
+  }
+
+  .tecla-shift-numero-e-indicador span{
+    width: 35px;
+    font-size: 10.5px;
+    line-height: 13.5px;
+    text-transform: none;
+    color: rgb(192, 9, 9);
+    text-transform: initial;
+  }
+
+  .tecla-shift-numero-d-indicador span{
+    width: 35px;
+    font-size: 10.5px;
+    line-height: 13.5px;
+    text-transform: none;
+    color: #bf40bf;
+    text-transform: initial;
+  }
+
+  .tecla-shift-numero-d-medio span{
+    width: 35px;
+    font-size: 10.5px;
+    line-height: 13.5px;
+    text-transform: none;
+    text-transform: initial;
+    color: rgb(255, 145, 0);
+  }
+
+  .tecla-shift-numero-d-anular span{
+    width: 35px;
+    font-size: 10.5px;
+    line-height: 13.5px;
+    text-transform: none;
+    text-transform: initial;
+    color: rgb(30, 192, 9);
+  }
+
+  .tecla-shift-d-minimo span{
+    width: 60px;
+    font-size: 10px;
+    text-transform: initial;
+    color: rgb(8, 234, 250);
+    margin-top: -20px;
+  }
+  
+  .tecla-backspace span{
+    width: 70px;
+    font-size: 35px;
+    line-height: 27px;   
+    color: rgb(8, 234, 250);
+    text-transform: initial;
+  }
+  .tecla-simple span{
+    width: 18px;
+    line-height: 27px;
+    text-transform: none;
+    text-align: center;
+  }
+  .tecla-num-lock span{
+    width: 18px;
+    line-height: 13.5px;
+    font-size: 8px;
+    text-transform: none;
+  }
+  .tecla-simple-2h span{
+    width: 18px;
+    height: 79px;
+    line-height: 74px;
+    font-size: 8px;
+    text-transform: none;
+    text-align: center;
+    position: absolute;
+  }
+  .tecla-enter span{
+    width: 52px;
+    font-size: 9px;
+    text-transform: none;
+    color: rgb(8, 234, 250);
+    line-height: 27px;
+    border-radius: 2px 2px 0px 8px;
+    box-shadow: 0px 0px 5px 2px #333;
+    position: relative;
+    text-align: center;
+  }
+  .tecla-enter span::after{
+    background-color: #555;
+    display: block;
+    box-shadow: 0px 3px 5px 1px #333;
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    top: 32px;
+    right: 0px;
+  }
+
+  /* .tecla-enter span{
+    width: 42px;
+    font-size: 9px;
+    text-transform: none;
+    line-height: 27px;
+    border-radius: 2px 2px 0px 8px;
+    box-shadow: 0px 0px 5px 2px #333;
+    position: relative;
+    text-align: center;
+  }
+  .tecla-enter span::after{
+    background-color: #555;
+    display: block;
+    box-shadow: 0px 3px 5px 1px #333;
+    position: absolute;
+    content: '';
+    height: 46px;
+    width: 40px;
+    top: 37px;
+    right: 0px;
+  } */
+
+  .tecla-enter span:hover::after{
+    background-color: #666;
+    cursor: pointer;
+  }
+  .tecla-enter span:active{
+    box-shadow: 0px 0px 2px #222;
+  }
+  .tecla-enter span:active::after{
+    box-shadow: 0px 2px 2px #222;
+    background-color: #555;
+  }
+
+.patrocinio {
+  width: 220px;
+  height: 60px;
+  margin-left: -230px;
+  margin-top: 500px;  
+
+}
+
+#patrocinio {  
+  font-size: 15px;
+  margin-top: -15px;
+}
+
+.atos {
+  width: 100px; 
+  margin-top: -10px;
+  margin-right: 15px;
+}
+
+.ufn {
+  width: 100px; 
+  margin-top: -10px;
+}
+
+
+
+  
+

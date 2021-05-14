@@ -1,0 +1,320 @@
+<div class="fundo" id="fundo">
+  <!-- Estatisticas -->
+  <div class="menuEsquerda">
+  <fieldset id="estatisticas"> 
+    <legend >
+     Estatísticas       
+    </legend> <br>
+    <label id="label2">Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Último  <br /></label>
+    <input class="estatisticas" type="text" id="nTeclasDigitadas" size="1" disabled value="{{teclasDigitadas}}" >
+    <input class="estatisticas2" type="text" id="nTeclasDigitadas2" size="1" disabled value="{{teclasDigitadasHistorico}}">
+    <label><br />Acertos: &nbsp;Último  <br /></label> 
+    <input class="estatisticas" type="text" id="nAcertos" size="1" disabled value="{{acertos}}">
+    <input class="estatisticas2"type="text" size="1" disabled value="{{acertosHistorico}}">
+    <label><br />MM:SS:MS &nbsp;&nbsp;&nbsp;Último <br /></label>
+    <input id="tempoCorrido" class="estatisticas" disabled size="4" /> 
+    <input type="text" size="2" class="estatisticas2" disabled size="4" value="{{this.tempoCorridoHistorico}}" >
+    <!-- <input class="estatisticas" type="text" id="nTeclasPorMinuto" size="5" disabled>  
+    <input class="estatisticas2"type="text" size="1" disabled value="{{teclasDigitadas}}"> -->
+  </fieldset>
+
+  <!-- Opções -->  
+  
+  <fieldset id="opcoes"> 
+    <legend>Opções</legend>    
+    <legend >
+      <legend>Tipos de caracteres:</legend>
+        <select style="background-color: rgb(0, 183, 255);" class="form-control" tabindex="1" #Select (change)="tipoCaracter(Select.value)">
+          <option *ngFor="let state of shopstates" [value]="state.statename">{{ state.statename }}</option>
+        </select>
+    </legend> <br>
+    <legend>Tamanho</legend>    
+    <legend >
+        <input style="background-color: rgb(0, 183, 255);" type="number" id="tamanho" #tamanho (keyup)="letrasNumeros()">      
+    </legend> <br>  
+    <input class="botaoIniciar" type="submit" id="iniciar" value={{botaoIniciar}} (click)="textoGerado(tamanho.value)"> 
+    <!-- <input class="botaoIniciar" type="submit" id="frases" value="Frases" (click)="focusEntradaDados()"> -->
+  </fieldset>
+
+</div>
+
+
+
+
+
+
+<fieldset id="principal"> 
+  <legend>Principal</legend>    
+  <legend style="background-color: rgb(0, 183, 255);">
+    <!-- ----------- Texto gerado ----------- -->
+    <legend>Texto gerado</legend>
+    <textarea     
+      id="entradaFraseGerada" 
+      name="entradaFraseGerada" 
+      rows="3" 
+      cols="110"
+      placeholder="Texto gerado..."
+      spellcheck="false"
+      #entradaFraseGerada
+      >
+    </textarea>   
+   
+    <legend>Texto digitado</legend>
+    <textarea 
+      id="entradaDados"
+      name="entradaDados"
+      rows="3" 
+      cols="110"
+      (keyup)="caracteresDigitados($event, entradaDados.value, entradaFraseGerada.value)"
+      #entradaDados
+      spellcheck="false"      
+      placeholder="Texto digitado..."
+      >
+    </textarea>
+    <!-- <button (click)="testeBotao()">Teste</button> -->
+    <!-- <button (click)="teclasPorMinutos.tart()">Cronometro</button> -->
+  </legend> <br>  
+  
+</fieldset>
+
+  <div class="result"></div>
+  <div class="textoGerado">    
+  </div> 
+
+  
+  <div class="patrocinio"> 
+    <span id="patrocinio" > Patrocínio: </span>  
+    <br /> 
+    <img
+      class="atos"       
+      src='../../assets/atos-logo-white-menu-bar.png'
+      alt=""
+    />
+    <img 
+      class="ufn"
+      src='../../assets/imagem_logo.png'
+      alt=""
+    />
+  </div>
+  <div class="teclado center">    
+    <div class="bloque">      
+      <div class="fila-teclas">
+        <span class="tecla tecla-null-e-minimo">
+          <span id="'">' &nbsp; &#34;</span>
+        </span>
+        <span class="tecla tecla-shift-numero-e-minimo">
+          <span id="1" >&#33;<br>1</span>
+        </span>
+        <span class="tecla tecla-shift-numero-e-anular">
+          <span id="2" >@<br>2</span>
+        </span>
+        <span class="tecla tecla-shift-numero-e-medio">
+          <span id="3" >&#35;<br>3</span>
+        </span>
+        <span class="tecla tecla-shift-numero-e-indicador">
+          <span id="4" >&#36;<br>4</span>        
+        </span>
+        <span class="tecla tecla-shift-numero-e-indicador">
+          <span id="5" >&#37;<br>5</span>
+        </span>
+        <span class="tecla tecla-shift-numero-e-indicador">
+          <span id="6" >&uml;<br>6</span>
+        </span>
+        <span class="tecla tecla-shift-numero-d-indicador">
+          <span id="7" >&amp;<br>7</span>
+        </span>
+        <span class="tecla tecla-shift-numero-d-indicador">
+          <span id="8" >*<br>8</span>
+        </span>
+        <span class="tecla tecla-shift-numero-d-medio">
+          <span id="9" >&#40;<br>9</span>
+        </span>
+        <span class="tecla tecla-shift-numero-d-anular">
+          <span id="0" >&#41;<br>0</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-minimo">
+          <span id="-">&mdash;<br>&minus;</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-minimo">
+          <span id="=">&#8314;<br>&#8332;</span>
+        </span>
+        <span class="tecla tecla-backspace">
+            <span id="Backspace"> ← </span>
+        </span>
+      </div>
+      <div class="fila-teclas">
+        <span class="tecla tecla-tab-e-minimo">
+          <span id="Tab">Tab</span>
+        </span>
+        <span class="tecla tecla-letra-e-minimo">
+          <span id="q" >q</span>
+        </span>
+        <span class="tecla tecla-letra-e-anular">
+          <span id="w" >w &nbsp; ↑</span>
+        </span>
+        <span class="tecla tecla-letra-e-medio">
+          <span id="e" >e</span>
+        </span>
+        <span class="tecla tecla-letra-e-indicador">
+          <span id="r" >r</span>
+        </span>
+        <span class="tecla tecla-letra-e-indicador">
+          <span id="t" >t</span>
+        </span>
+        <span class="tecla tecla-letra-d-indicador">
+          <span id="y" >y</span>
+        </span>
+        <span class="tecla tecla-letra-d-indicador">
+          <span id="u" >u</span>
+        </span>
+        <span class="tecla tecla-letra-d-medio">
+          <span id="i" >i</span>
+        </span>
+        <span class="tecla tecla-letra-d-anular">
+          <span id="o" >o</span>
+        </span>
+        <span class="tecla tecla-letra-d-minimo">
+          <span id="p" >p</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-minimo">
+          <span id="Dead" >´<br>`</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-minimo">
+          <span id="[">&#123;<br>[</span>
+        </span>
+        <span class="tecla tecla-enter">
+          <span id="Enter">Enter</span>
+        </span>
+      </div>
+      <div class="fila-teclas">
+        <span class="tecla tecla-capslock-e-minimo">
+          <span id="CapsLock">CapsLock</span>       
+        </span>
+        <span class="tecla tecla-letra-e-minimo">
+          <span id="a" >a<br>←</span>
+        </span>
+        <span class="tecla tecla-letra-e-anular">
+          <span id="s" >s<br>↓</span>
+        </span>
+        <span class="tecla tecla-letra-e-medio">
+          <span id="d" >d<br>→</span>
+        </span>
+        <span class="tecla tecla-letra-e-indicador">
+          <span id="f" >f</span>
+        </span>
+        <span class="tecla tecla-letra-e-indicador">
+          <span id="g" >g</span>
+        </span>
+        <span class="tecla tecla-letra-d-indicador">
+          <span id="h" >h</span>
+        </span>
+        <span class="tecla tecla-letra-d-indicador">
+          <span id="j" >j</span>
+        </span>
+        <span class="tecla tecla-letra-d-medio">
+          <span id="k" >k</span>
+        </span>
+        <span class="tecla tecla-letra-d-anular">
+          <span id="l" >l</span>
+        </span>
+        <span class="tecla tecla-letra-d-minimo">
+          <span id="ç" >ç</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-minimo">
+          <span id="~" >&and;<br>~</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-minimo">
+          <span id="]">&#125;<br>&#93;</span>
+        </span>
+      </div>
+      <div class="fila-teclas">
+        <span class="tecla tecla-shift-e-minimo">
+          <span id="ShiftLeft">Shift</span>
+        </span>
+        <span class="tecla tecla-caract-espec-e-minimo">
+          <span>\<br>&nbsp; &nbsp; |<br></span>
+        </span>
+        <span class="tecla tecla-letra-e-minimo">
+          <span id="z" >z</span>
+        </span>
+        <span class="tecla tecla-letra-e-anular"
+          >
+          <span id="x" >x</span>
+        </span>
+        <span class="tecla tecla-letra-e-medio">
+          <span id="c" >c</span>
+        </span>
+        <span class="tecla tecla-letra-e-indicador">
+          <span id="v" >v</span>
+        </span>
+        <span class="tecla tecla-letra-e-indicador">
+          <span id="b" >b</span>
+        </span>
+        <span class="tecla tecla-letra-d-indicador">
+          <span id="n" >n</span>
+        </span>
+        <span class="tecla tecla-letra-d-indicador">
+          <span id="m" >m</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-medio">
+          <span id="," >&lt;<br> ,</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-anular">
+          <span id="." >&gt;<br> .</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-minimo">
+          <span id=";" >&#58;<br>&#59;</span>
+        </span>
+        <span class="tecla tecla-caract-espec-d-minimo">
+          <span id="/" >? <br> &nbsp; &nbsp;&#47;</span>
+        </span>
+        <span class="tecla tecla-shift-d-minimo">
+          <span id="ShiftRight">Shift</span>
+        </span>     
+      </div>
+      <div class="fila-teclas">
+        <span class="tecla tecla-ctrl-e-minimo">
+          <span id="ControlLeft" >Ctrl</span>
+        </span>
+        <!-- <span class="tecla tecla-fn">
+          <span>Fn<br>&#160;&#175;</span>
+        </span> -->
+        <span class="tecla tecla-windows-e-minimo" >
+          <span>
+            <img 
+              class="img-fluid" 
+              src='../../assets/windows2.png' 
+              style="width: 20px; 
+              margin-top: 5px;
+              margin-left: 2px;"
+              alt=""
+            />  
+          </span>
+        </span>
+        <span class="tecla tecla-alt-e-minimo">
+          <span>Alt</span>
+        </span>
+        <span class="tecla tecla-space-bar">
+          <span id="Space">&nbsp;</span>
+        </span>
+        <span class="tecla tecla-alt-gr-d-anular">
+          <span id="AltGraph">Alt Gr</span>
+        </span>
+        <!-- Fn -->
+        <span class="tecla tecla-btn-fn-d-anular">
+          <span>Fn</span>
+        </span>
+        <!-- Impressora -->
+        <span class="tecla tecla-btn-imp-d-anular">
+          <span id="ContextMenu">Impr</span>
+        </span>
+        <span class="tecla tecla-ctrl-two-d-anular">
+          <span id="Control">Ctrl</span>
+        </span> 
+      </div>
+    </div>    
+  </div>  
+</div>
+
+
+  

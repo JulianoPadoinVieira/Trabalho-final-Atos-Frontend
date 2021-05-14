@@ -1,0 +1,59 @@
+<div class="bootstrap-wrapper" id="principal">
+    <div class="container mt">
+        <div class="row" >
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <img 
+                        class="img-fluid" 
+                        src="/assets/password.png" 
+                        style="width: 250px;                        
+                        padding-top: 40px;
+                        padding-bottom: 30px;"
+                        alt=""
+                    /> 
+                </div>
+
+                <!-- Criando o formulário -->
+
+                <form (ngSubmit)="onSubmit()">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Login</mat-label>
+                        <input 
+                            [(ngModel)]="credentials.username"
+                            name="username"
+                            required
+                            type="text" 
+                            matInput 
+                            class="loginsenha"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Senha</mat-label>
+                        <input 
+                            [(ngModel)]="credentials.password"
+                            name="password"
+                            required
+                            type="password" 
+                            matInput 
+                        />
+                    </mat-form-field>
+
+                    <div class="container text-center">
+
+                        <button type="submit" mat-raised-button color="primary">
+                            Login        
+                        </button>   
+                        
+                        <button style="margin-left: 10px" type="reset" mat-raised-button color="accent">
+                            Reset        
+                        </button>
+
+                    </div>
+                </form>
+                <br />
+                <!-- <p class="mt">{{credentials | json}}</p> -->
+            </div>
+        </div>
+    </div>
+</div>
